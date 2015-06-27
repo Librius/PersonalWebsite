@@ -21,7 +21,7 @@ def category(request, category_name_slug):
         articles = Article.objects.filter(category=category)
 
         # Adds our results list to the template context under name pages.
-        context_dict['article'] = articles
+        context_dict['articles'] = articles
         # We also add the category object from the database to the context dictionary.
         # We'll use this in the template to verify that the category exists.
         context_dict['category'] = category
