@@ -10,6 +10,17 @@
 <body>
     <h1>Librius says...</h1>
     hello world! <strong>{{ boldmessage }}</strong><br/>
+
+    {% if categories %}
+        <ul>
+            {% for category in categories %}
+                <li><a href="/blog/category/{{ category.slug }}">{{ category.name }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <strong>There are no categories present.</strong>
+    {% endif %}
+
     <!--a href="/blog/">Blog.index</a><br/-->
     <img src="{% static "images/cat.png" %}" alt="Picture of Cat" />
 </body>
