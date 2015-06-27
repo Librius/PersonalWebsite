@@ -4,6 +4,27 @@ from django.http import HttpResponse
 
 # Create your views here.
 
+
+def article(request, article_title_slug):
+
+    # Create a context dictionary which we can pass to the template rendering engine.
+    context_dict = {}
+
+    try:
+        print article_title_slug
+        theArticle = Article.objects.get(slug=article_title_slug)
+        context_dict['article'] = theArticle
+        context_dict['article_name'] = theArticle.title
+        context_dict['article_content'] = theArticle.text
+    except Category.DoesNotExist:
+        # We get here if we didn't find the specified category.
+        # Don't do anything - the template displays the "no category" message for us.
+        pass
+
+    # Go render the response and return it to the client.
+    return render(request, 'blog/article.html', context_dict)
+
+
 def category(request, category_name_slug):
 
     # Create a context dictionary which we can pass to the template rendering engine.
