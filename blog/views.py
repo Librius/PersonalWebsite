@@ -10,6 +10,9 @@ def article(request, article_title_slug):
     # Create a context dictionary which we can pass to the template rendering engine.
     context_dict = {}
 
+    category_list = Category.objects.order_by('id')
+    context_dict['categories'] = category_list
+
     try:
         print article_title_slug
         theArticle = Article.objects.get(slug=article_title_slug)
