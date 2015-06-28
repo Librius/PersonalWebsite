@@ -30,6 +30,9 @@ def category(request, category_name_slug):
     # Create a context dictionary which we can pass to the template rendering engine.
     context_dict = {}
 
+    category_list = Category.objects.order_by('id')
+    context_dict['categories'] = category_list
+
     try:
         # Can we find a category name slug with the given name?
         # If we can't, the .get() method raises a DoesNotExist exception.
@@ -57,8 +60,14 @@ def category(request, category_name_slug):
 
 def index(request):
 
+    context_dict = {}
+
     category_list = Category.objects.order_by('id')
-    context_dict = {'categories': category_list}
+    context_dict['categories'] = category_list
+    article_list = Article.objects.order_by('-created')
+    last_article = article_list[0]
+    context_dict['articles'] = article_list
+    context_dict['last_article'] = last_article
 
     # Construct a dictionary to pass to the template engine as its context.
     # Note the key boldmessage is the same as {{ boldmessage }} in the template!

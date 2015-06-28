@@ -4,7 +4,7 @@
 
 {% block title %}{{ category_name }}{% endblock %}
 
-{% block body_block %}
+{% block content_block %}
     <h1>{{ category_name }}</h1>
     {% if category %}
         {% if articles %}
@@ -19,5 +19,5 @@
     {% else %}
         The specified category {{ category_name }} does not exist!
     {% endif %}
-
 {% endblock %}
+

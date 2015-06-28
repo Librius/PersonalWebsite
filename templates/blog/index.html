@@ -1,27 +1,20 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 
 {% load staticfiles %}
 
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Index</title>
-</head>
-<body>
-    <h1>Librius says...</h1>
-    hello world! <strong>{{ boldmessage }}</strong><br/>
-
-    {% if categories %}
-        <ul>
-            {% for category in categories %}
-                <li><a href="/blog/category/{{ category.slug }}">{{ category.name }}</a></li>
-            {% endfor %}
-        </ul>
+{% block article_title_block %}
+    {% if last_article %}
+        {{ last_article }}
     {% else %}
-        <strong>There are no categories present.</strong>
+        Empty!!!
     {% endif %}
+{% endblock %}
 
-    <!--a href="/blog/">Blog.index</a><br/-->
+{% block article_created_time_block %}{{ last_article.created }}{% endblock %}
+
+{% block content_block %}
+    <p>Here is the test of code</p>
+    <hr>
+    <pre><code> <li><a href="/blog/category/{{ category.slug }}">{{ category.name }}</a></li> </code></pre>
     <img src="{% static "images/cat.png" %}" alt="Picture of Cat" />
-</body>
-</html>
+{% endblock %}
