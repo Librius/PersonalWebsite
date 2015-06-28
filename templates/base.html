@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -7,7 +8,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
 
     <title>Blog</title>
 
@@ -15,7 +16,7 @@
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="http://getbootstrap.com/examples/blog/blog.css" rel="stylesheet">
+    <link href="{% static "css/blog_base.css" %}" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="http://getbootstrap.com/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -30,23 +31,42 @@
 
 <body>
 
-<div class="blog-masthead">
+<div class="navbar-wrapper">
     <div class="container">
-        <nav class="blog-nav">
-            <a class="blog-nav-item active" href="#">Home</a>
-            <a class="blog-nav-item" href="#">New features</a>
-            <a class="blog-nav-item" href="#">Press</a>
-            <a class="blog-nav-item" href="#">New hires</a>
-            <a class="blog-nav-item" href="#">About</a>
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <p class="navbar-brand">Green Nebula</p>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/">Home</a></li>
+                        <li class="active"><a href="/blog">Blog</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="/admin">Admin</a></li>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
+
     </div>
 </div>
+
 
 <div class="container">
 
     <div class="blog-header">
-        <h1 class="blog-title">The Bootstrap Blog</h1>
-        <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
+        <h1 class="blog-title">Uranus Orbit</h1>
+        <p class="lead blog-description">Bonnie's adventures in Computer Science.</p>
     </div>
 
     <div class="row">
@@ -59,27 +79,6 @@
 
                 {% block content_block %}{% endblock %}
 
-{#                <p>This blog post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>#}
-{#                <hr>#}
-{#                <blockquote>#}
-{#                    <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>#}
-{#                </blockquote>#}
-{#                <p>paragraph <em>make it italic</em> </p>#}
-{#                <h2>Heading</h2>#}
-{#                <h3>Sub-heading</h3>#}
-{#                <pre><code>{% block code_block %}{% endblock}</code></pre>#}
-{#                <ul>#}
-{#                    <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>#}
-{#                    <li>Donec id elit non mi porta gravida at eget metus.</li>#}
-{#                    <li>Nulla vitae elit libero, a pharetra augue.</li>#}
-{#                </ul>#}
-{#                <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>#}
-{#                <ol>#}
-{#                    <li>Vestibulum id ligula porta felis euismod semper.</li>#}
-{#                    <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>#}
-{#                    <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>#}
-{#                </ol>#}
-{#                <p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>#}
             </div><!-- /.blog-post -->
 
             <nav>
