@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block article_title_block %}{{ article_name }}{% endblock %}
+
+{% block article_created_time_block %}{{ article.created }}{% endblock %}
+
+{% block content_block %}
+        {% if article %}
+            <p>{{ article_content }}</p>
+        {% else %}
+            <strong>No article</strong>
+        {% endif %}
+{% endblock %}
