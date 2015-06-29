@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'blog_base.html' %}
 
 {% load staticfiles %}
 
@@ -15,6 +15,14 @@
 {% block content_block %}
     <p>Here is the test of code</p>
     <hr>
-    <pre><code> <li><a href="/blog/category/{{ category.slug }}">{{ category.name }}</a></li> </code></pre>
-    <img src="{% static "images/cat.png" %}" alt="Picture of Cat" />
+    <pre><code>
+        // my first program in C++
+        #include &lt;iostream&gt;
+
+        int main()
+        {
+        std::cout << "Hello World!";
+        }
+    </code></pre>
+    <img src="{% static "images/cat.png" %}" class="img-responsive" alt="Picture of Cat" />
 {% endblock %}
