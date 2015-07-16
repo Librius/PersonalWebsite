@@ -27,7 +27,6 @@ def article(request, article_title_slug):
     # Go render the response and return it to the client.
     return render(request, 'blog/article.html', context_dict)
 
-
 def category(request, category_name_slug):
 
     # Create a context dictionary which we can pass to the template rendering engine.
