@@ -13,6 +13,18 @@
 {% block article_created_time_block %}{{ last_article.created }}{% endblock %}
 
 {% block content_block %}
+
+    <p>Room Escape<br></p>
+
+    <video controls>
+        {#        <source src="{% static "video/showtime.m4v" %}">#}
+        <source src="https://www.googledrive.com/host/0BwfSM3RceToTMzJ0bDJ1RmhRajQ"/>
+        Your browser does not support the video tag.
+    </video>
+
+    <br>
+    <br>
+
     <p>Here is the test of code</p>
     <hr>
     <pre><code>
@@ -25,9 +37,5 @@
         }
     </code></pre>
     <img src="{% static "images/cat.png" %}" class="img-responsive" alt="Picture of Cat" />
-    <video controls>
-{#        <source src="{% static "video/showtime.m4v" %}">#}
-        <source src="https://www.googledrive.com/host/0BwfSM3RceToTMzJ0bDJ1RmhRajQ"/>
-        Your browser does not support the video tag.
-    </video>
+
 {% endblock %}
